@@ -8,9 +8,17 @@ class AuthenticationsController < ApplicationController
       Rails.logger.info "Setting token: #{user}"
       cookies[:token] = user["token"]
       Rails.logger.info "Cookie: #{cookies[:token]}"
-      redirect_to profile_path
+      response = {
+        :status => "OK",
+        :message => "Success"
+      }
+      format.json { render :json => response }
     else
-      render 'new'
+      response = {
+        :status => "Not Found",
+        :message => "Failed"
+      }
+      format.json { render :json => response }
     end
   end
 end

@@ -12,13 +12,13 @@ class AuthenticationsController < ApplicationController
         :status => "OK",
         :message => "Success"
       }
-      format.json { render :json => response }
+      render :json => response
     else
       response = {
         :status => "Not Found",
         :message => "Failed"
       }
-      format.json { render :json => response }
+      render :json => response
     end
   end
 end

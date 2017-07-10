@@ -1,0 +1,37 @@
+<div class="header-color" id="header">
+  <div class="navbar" role="navigation">
+    <div class="sticky-wrapper" id="undefined-sticky-wrapper" style="height:90">
+      <div class="kleo-main-header header-normal">
+        <div class="container">
+          <div class="navbar-header" style="lineHeight: 90; height: 90">
+            <div class="kleo-mobile-switch">
+              <button class="navbar-toggle" data-target=".nav-collapse" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> 
+                <span class="icon-bar"></span>
+                 <span class="icon-bar"></span> 
+                 <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="kleo-mobile-icons">
+            </div>
+            <strong class="logo retina-logo">
+              <a href="/"><img alt="Kleo WordPress Theme" id="logo_img" src="http://i.imgur.com/7hKooKX.png" style="width: 250;margin-top: 32.5;"/></a>
+            </strong>
+          </div>
+          <div class="primary-menu collapse navbar-collapse nav-collapse">
+            <ul class="nav navbar-nav" id="menu-kleonavmenu">
+              <% if @user %>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-832 dropdown mega-17-cols" id="menu-item-832">
+                  <a class="js-activated" href="/profile" style="lineHeight: 90" title="Home">Profile</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-832 dropdown mega-17-cols" id="menu-item-832">
+                  <a class="js-activated" href="/profile/subscription" style="lineHeight: 90" title="Home">Subscription</a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

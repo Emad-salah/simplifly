@@ -1,0 +1,40 @@
+<%= render partial: 'partials/profile_header' %>
+
+<section class="container-wrap main-color">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div id="buddypress">
+          <div class="profile">
+            <div class="bp-widget about-me">
+              <div class="hr-title hr-full hr-double">
+                <abbr>Details</abbr>
+              </div>
+              <div class="gap-10"></div>
+              <dl class="dl-horizontal field_1 field_name required-field visibility-public field_type_textbox" style="margin: 0; padding: 0;">
+                <dt>Status:</dt>
+                <dd><p><%= @user["subscribed"] ? @subscription["status"].capitalize : "Not Subscribed." %></p></dd>
+              </dl>
+              <% if @user["subscribed"] %>
+                <dl class="dl-horizontal field_1 field_name required-field visibility-public field_type_textbox" style="margin: 0;padding: 0;">
+                  <dt>Next Billing Date:</dt>
+                  <dd><p><%= timestamp_to_string(@subscription["next_billing_timestamp"]) %></p></dd>
+                </dl>
+              <% end %>
+              <center>
+                <a href="#" class="btn-primary payment-button col-md-8 col-md-offset-2 pink-color"><%= card_button_text_for(@user) %></a><div class="gap-10"></div>
+                <% if @user["subscribed"] && @user["subscription"]["stripe_token"] %>
+                  <a href="#" class="btn-primary auto-renew-button col-md-8 col-md-offset-2"><%= @subscription["will_cancel_at_period_end"] ? "Turn on auto renewal" : "Turn off auto renewal" %></a><div class="gap-10"></div>
+                <% end %>
+                <% if @user["subscribed"] %>
+                  <a class="btn-primary delete-subscription col-md-8 col-md-offset-2" href="#">Delete Subscription</a><div class="gap-10"></div>
+                <% end %>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gap-40"></div>
+</section>

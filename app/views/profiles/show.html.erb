@@ -1,0 +1,33 @@
+<%= render partial: 'partials/profile_header' %>
+
+<section class="container-wrap main-color">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div id="buddypress">
+          <div class="profile">
+            <div class="bp-widget about-me">
+              <div class="hr-title hr-full hr-double">
+                <abbr>Profile</abbr>
+              </div>
+              <div class="gap-10"></div>
+              <dl class="dl-horizontal field_1 field_name required-field visibility-public field_type_textbox">
+                <dt>Name</dt>
+                <dd><p><%= @user["name"] %></p></dd>
+              </dl>
+              <dl class="dl-horizontal field_1 field_name required-field visibility-public field_type_textbox">
+                <dt>Home City</dt>
+                <dd><p><%= @user["origin"] ? @user["origin"]["name"] : "Not Set" %></p></dd>
+              </dl>
+              <dl class="dl-horizontal field_1 field_name required-field visibility-public field_type_textbox">
+                <dt>Premium:</dt>
+                <dd><a href="./profile/subscription"><%= @user["subscribed"] ? "Subscribed. View subscription here" : "Not subscribed. Sign up here" %></a></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gap-40"></div>
+</section> 

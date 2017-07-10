@@ -1,0 +1,36 @@
+<html class="yes-js js_active js js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js-active  kleo-desktop  kleo-transform  kleo-transform ">
+  <head>
+      <title>Simplifly</title>
+      <link rel="stylesheet" href="/css/bbpress.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/buddypress.css" type="text/css">
+      <link rel="stylesheet" href="/css/combined-and-fonts.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/dashicons.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/dynamic.css" type="text/css">
+      <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/frontend.css" type="text/css">
+      <link rel="stylesheet" href="/css/go_pricing_styles.css" type="text/css">
+      <link rel="stylesheet" href="/css/jquery.selectBox.css" type="text/css">
+      <link rel="stylesheet" href="/css/k-switcher.css" type="text/css">
+      <link rel="stylesheet" href="/css/mediaelementplayer.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/mentions.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/print.css" type="text/css">
+      <link rel="stylesheet" href="/css/rtmedia.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/settings.css" type="text/css">
+      <link rel="stylesheet" href="/css/style.css" type="text/css">
+      <link rel="stylesheet" href="/css/styles.css" type="text/css">
+      <link rel="stylesheet" href="/css/wp-mediaelement.min.css" type="text/css">
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="/js/subscriptions.js"></script>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="activity bp-user my-activity just-me buddypress bbp-user-page single singular bbpress page-template-default page page-id-0 page-parent rtm-4.3.2 offcanvas-right offcanvas-type-default kleo-navbar-fixed navbar-resize disable-all-animations-on-mobile footer-bottom bp-light-icons wpb-js-composer js-comp-ver-5.1 vc_responsive js is-user-profile">
+    <div class="kleo-page">
+      <%= render partial: 'partials/navigation' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

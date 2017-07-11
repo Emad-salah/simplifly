@@ -19,7 +19,7 @@ $(function() {
   $('.subscribe-btn').click(function(e) {
     console.log("Here");
     var handler = StripeCheckout.configure({
-      key: 'pk_live_cM6Z2o5fituXYYWYQ5hNwcNh',
+      key: 'pk_test_oy58scwTIo43THRKjXc8aaHm',
       allowRememberMe: false,
       panelLabel: "Subscribe",
       token: handleStripeToken

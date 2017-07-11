@@ -16,7 +16,7 @@ $(function() {
       dataType: "json"
     });
   };
-  $('.payment-button').click(function(e) {
+  $('.subscribe-btn').click(function(e) {
     console.log("Here");
     var handler = StripeCheckout.configure({
       key: 'pk_live_cM6Z2o5fituXYYWYQ5hNwcNh',

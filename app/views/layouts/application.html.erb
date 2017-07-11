@@ -22,7 +22,6 @@
     <meta name="msapplication-TileColor" content="#ee0979">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ee0979">
-    <script src="https://checkout.stripe.com/checkout.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -30,5 +29,8 @@
 
   <body>
     <%= yield %>
+    
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="/js/subscriptions.js"></script>
   </body>
 </html>

@@ -1,22 +1,33 @@
-<section class="profile">
-  <nav>
-    <div class="logo-holder"><img src="" alt=""></div>
-    <div class="nav-btns">
-      <% if @user %>
-        <a href="/profile">Profile</a>
-        <a href="/profile/subscription">Subscription</a>
-      <% end %>
+<section class="main-container">
+  <section class="landing profile-landing">
+    <nav>
+      <div class="logo-holder">
+        <img src="images/logo.svg" alt="logo">
+      </div>
+      <div class="nav-btns">
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+      </div>
+    </nav>
+    <div class="profile-container">
+      <div class="profile-img"></div>
+      <p class="profile-name">Thom</p>
+      <div class="profile-location">
+        <i class="material-icons">place</i>
+        <p class="location">Boston</p>
+      </div>
+      <p class="premium-badge">Not Premium Yet</p>
+      <div class="profile-subscription">
+        <div class="subscription-status">
+          <p>Subscription Status:</p>
+          <p class="status">Not Subscribed</p>
+        </div>
+        <div class="subscribe-btn">
+          Subscribe
+        </div>
+      </div>
     </div>
-  </nav>
-  <section class="profile-container">
-    <div class="profile-pic">
-      <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="Avatar">
-      <p class="name"><%= @user["name"] %></p>
-      <p class="location"><%= @user["origin"] ? @user["origin"]["name"] : "Not Set" %></p>
-      <div class="premium <%= @user['subscribed'] ? 'active' : 'inactive' %>"><%= @user['subscribed'] ? 'Premium' : 'Not Premium Yet' %></div>
-    </div>
-    <div class="profile-info">
-
-    </div>
+    <img src="images/cloud2.svg" alt="footer cloud" class="cloudbot profile-cloud">
+    <img src="images/cloud1.svg" alt="footer cloud" class="cloudtop profile-cloud">
   </section>
 </section>

@@ -14,6 +14,9 @@ $(function() {
         console.log(data);
         return window.location = "/profile";
       },
+      error: function(err) {
+        console.log(err);
+      },
       dataType: "json"
     });
   };

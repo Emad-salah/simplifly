@@ -11,17 +11,23 @@
     </nav>
     <div class="profile-container">
       <div class="profile-img"></div>
-      <p class="profile-name">Thom</p>
+      <p class="profile-name"><%= @user["name"] %></p>
       <div class="profile-location">
         <i class="material-icons">place</i>
-        <p class="location">Boston</p>
+        <p class="location"><%= @user["origin"] ? @user["origin"]["name"] : "Not Set" %></p>
       </div>
-      <p class="premium-badge">Not Premium Yet</p>
+      <p class="premium-badge"><%= @user["subscribed"] ? "Premium" : "Not Premium Yet" %></p>
       <div class="profile-subscription">
         <div class="subscription-status">
           <p>Subscription Status:</p>
-          <p class="status">Not Subscribed</p>
+          <p class="status"><%= @user["subscribed"] ? @subscription["status"].capitalize : "Not Subscribed" %></p>
         </div>
+        <% if @user["subscribed"] %>
+        <div class="subscription-status">
+          <p>Next Billing Date:</p>
+          <p class="status"><%= timestamp_to_string(@subscription["next_billing_timestamp"]) %></p>
+        </div>
+        <% end %>
         <div class="subscribe-btn">
           Subscribe
         </div>

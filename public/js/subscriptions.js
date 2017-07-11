@@ -11,7 +11,8 @@ $(function() {
         }
       },
       success: function(data) {
-        return window.location = "/profile/subscription";
+        console.log(data);
+        return window.location = "/profile";
       },
       dataType: "json"
     });

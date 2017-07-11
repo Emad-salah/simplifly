@@ -17,7 +17,8 @@ class API
   end
 
   def self.createSubscription token: "", subscription: {}
-    self.post('/subscriptions', {body: {token: token, subscription: subscription}})
+    res = self.post('/subscriptions', {body: {token: token, subscription: subscription}})
+    return JSON.parse(res.body) if res.code == 200
   end
 
   def self.deleteSubscription token: ""

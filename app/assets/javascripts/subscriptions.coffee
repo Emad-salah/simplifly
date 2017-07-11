@@ -20,7 +20,7 @@ handler = StripeCheckout.configure(
   panelLabel: "Subscribe"
   token: handleStripeToken)
 
-$('.payment-button').click (e) ->
+$('.subscription-btn').click (e) ->
   # Open Checkout with further options
   handler.open
     name: 'Simplifly Premium'

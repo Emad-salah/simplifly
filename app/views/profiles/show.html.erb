@@ -31,6 +31,16 @@
         <div class="subscribe-btn">
           Subscribe
         </div>
+        <% if @user["subscribed"] && @user["subscription"]["stripe_token"] %>
+          <div class="auto-renew-button <%= @subscription["will_cancel_at_period_end"] ? "" : "disabled" %>">
+            <%= @subscription["will_cancel_at_period_end"] ? "Turn on auto renewal" : "Turn off auto renewal" %>
+          </div>
+        <% end %>
+        <% if @user["subscribed"] %>
+          <div class="delete-subscription disabled">
+            CANCEL SUBSCRIPTION
+          </div>
+        <% end %>
       </div>
     </div>
     <img src="images/cloud2.svg" alt="footer cloud" class="cloudbot profile-cloud">

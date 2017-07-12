@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def authenticate
     @user = API.authenticate(token: cookies[:token])
     if !@user
-      redirect_to new_authentication_path
+      redirect_to "/"
     end
   end
 end

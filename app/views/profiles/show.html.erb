@@ -20,25 +20,26 @@
       <div class="profile-subscription">
         <div class="subscription-status">
           <p>Subscription Status:</p>
-          <p class="status"><%= @user["subscribed"] ? @subscription["status"].capitalize : "Not Subscribed" %></p>
+          <p class="status"><%= @user["subscribed"] ? @user["subscription"]["status"].capitalize : "Not Subscribed" %></p>
         </div>
         <% if @user["subscribed"] %>
         <div class="subscription-status">
           <p>Next Billing Date:</p>
-          <p class="status"><%= timestamp_to_string(@subscription["next_billing_timestamp"]) %></p>
+          <p class="status"><%= timestamp_to_string(@user["subscription"]["next_billing_timestamp"]) %></p>
         </div>
         <% end %>
-        <div class="subscribe-btn">
-          Subscribe
-        </div>
         <% if @user["subscribed"] && @user["subscription"]["stripe_token"] %>
-          <div class="auto-renew-button <%= @subscription["will_cancel_at_period_end"] ? "" : "disabled" %>">
-            <%= @subscription["will_cancel_at_period_end"] ? "Turn on auto renewal" : "Turn off auto renewal" %>
+          <div class="auto-renew-button <%= @user["subscription"]["will_cancel_at_period_end"] ? "" : "disabled" %>">
+            <%= @user["subscription"]["will_cancel_at_period_end"] ? "Turn on auto renewal" : "Turn off auto renewal" %>
           </div>
         <% end %>
         <% if @user["subscribed"] %>
           <div class="delete-subscription disabled">
             CANCEL SUBSCRIPTION
+          </div>
+        <% else %>
+          <div class="subscribe-btn">
+            Subscribe
           </div>
         <% end %>
       </div>
